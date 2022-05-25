@@ -1,4 +1,7 @@
+from tkinter import N
 import turtle
+import math
+
 nora = turtle.Turtle()
 
 def square(t, length):
@@ -13,4 +16,10 @@ def polygon(t, length, n):
         t.lt((360/n))
     turtle.mainloop()
 
-polygon(nora, 200, 5)
+def circle(t, r):
+    circumference = 2 * math.pi * r
+    n = int(circumference / 3) + 3
+    length = circumference / n
+    polygon(t, length, n)
+
+circle(nora, 40)
